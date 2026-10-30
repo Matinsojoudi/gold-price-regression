@@ -1,7 +1,7 @@
 # Gold Price Prediction via Linear and Ridge Regression
 ### Urmia University — Deep Learning & Machine Learning Course (Assignment #1)
 
-**Author:** Matin Sojoudi (متین سجودی) — Student ID: `401011244`  
+**Author:** Matin Sojoudi (متین سجودی) — Student ID: `14014421025`  
 **Supervisor:** Dr. Saleh Yousefi  
 **Term:** Autumn 2026 (پاییز ۱۴۰۵)  
 

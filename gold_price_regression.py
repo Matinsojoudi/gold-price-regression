@@ -2,7 +2,7 @@
 Urmia University - Deep Learning & Machine Learning
 Assignment #1: Regression for Gold Price Prediction
 Author: Matin Sojoudi
-Student ID: 401011244
+Student ID: 14014421025
 Supervisor: Dr. Saleh Yousefi
 """
 

@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+.DS_Store
+build_report_docx.py
+spdr-gold-shares-gld.ipynb

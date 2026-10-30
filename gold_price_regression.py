@@ -13,10 +13,23 @@ from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 
 def main():
     # خواندن داده‌های تاریخی طلا
-    csv_path = os.path.join(os.path.dirname(__file__), 'GLD.csv')
+    csv_candidates = ['gld_price_only.csv', 'GLD.csv']
+    csv_path = None
+    for c in csv_candidates:
+        p = os.path.join(os.path.dirname(__file__), c)
+        if os.path.exists(p):
+            csv_path = p
+            break
+    if not csv_path:
+        csv_path = os.path.join(os.path.dirname(__file__), 'GLD.csv')
+
     df = pd.read_csv(csv_path)
     df['Date'] = pd.to_datetime(df['Date'])
     df = df.sort_values('Date').reset_index(drop=True)
+
+    # فیلتر بازه زمانی مطابق دستور تمرین (2018 تا 2024) در صورت وجود داده‌های سال‌های دیگر
+    if df['Date'].min() < pd.to_datetime('2018-01-01') or df['Date'].max() > pd.to_datetime('2024-12-31'):
+        df = df[(df['Date'] >= '2018-01-01') & (df['Date'] <= '2024-12-31')].reset_index(drop=True)
 
     # ایجاد متغیر هدف: قیمت روز بعد
     df['Target_Next_Close'] = df['Close'].shift(-1)
